@@ -1,0 +1,23 @@
+<main>
+    <h1>MY MOST SECRETEST THOUGHTS</h1>
+    <h5>KEEP OUT</h5>
+    <div id="social-posts">
+        <button id="new-thought" (click)="addPost()">New Thought</button>
+        <div id="feed">
+            <div class="post" *ngFor="let thot of thoughts; index as i">
+                <div><h2>{{thot.title}}</h2>
+                <h4>{{thot.thought}}</h4></div>
+                <button class="X" (click)="deletePost(i)">X</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="post-form">
+        Title
+        <input name="title" type="text" #title1 id="title1f">
+        Thought
+        <textarea rows="10" name="thought" #thought1 id="thought1"></textarea>
+        <button id="add" (click)="
+        submitPost(title1.value, thought1.value)">Add Thought</button>
+    </div>
+</main>
